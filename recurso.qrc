@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/new/iconoterm"/>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/">
+        <file>recursos/iconoterm.png</file>
+    </qresource>
+</RCC>

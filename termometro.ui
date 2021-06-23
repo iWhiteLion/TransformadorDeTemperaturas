@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Termometro</class>
+ <widget class="QMainWindow" name="Termometro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>706</width>
+    <height>546</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Termometro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="recurso.qrc">
+    <normaloff>:/recursos/iconoterm.png</normaloff>:/recursos/iconoterm.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Sitka Heading&quot;;
+font: 75 14pt &quot;Sitka Heading&quot;;</string>
+        </property>
+        <property name="title">
+         <string>Centrigrados</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLCDNumber" name="outCent">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 0);
+color: rgb(170, 0, 0);
+background-color: rgb(255, 170, 0);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdCent">
+           <property name="minimum">
+            <number>-273</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="styleSheet">
+         <string notr="true">font: 75 14pt &quot;Sitka Heading&quot;;</string>
+        </property>
+        <property name="title">
+         <string>Fahrenheit</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLCDNumber" name="outFahr">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 85, 0);
+color: rgb(85, 0, 0);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdFahr">
+           <property name="minimum">
+            <number>-460</number>
+           </property>
+           <property name="maximum">
+            <number>212</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Sitka Heading&quot;;</string>
+        </property>
+        <property name="title">
+         <string>Kelvin</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLCDNumber" name="outKel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 255);</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="cmdKel">
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>373</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>706</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="recurso.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cmdFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>466</x>
+     <y>390</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>466</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdKel</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outKel</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>583</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>583</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>390</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
