@@ -14,7 +14,7 @@ class Termometro : public QMainWindow
 public:
     Termometro(QWidget *parent = nullptr);
     ~Termometro();
-
+//slots para conversion de temperaturas
 public slots:
     void cent2fahr(int);
     void cent2kel(int);

@@ -7,7 +7,7 @@ Termometro::Termometro(QWidget *parent)
     , ui(new Ui::Termometro)
 {
     ui->setupUi(this);
-
+//Conexiones para las seniales y slots
     connect(ui->cmdCent, SIGNAL(valueChanged(int)),
             this, SLOT(cent2fahr(int)));
 
@@ -35,48 +35,48 @@ Termometro::~Termometro()
 void Termometro::cent2fahr(int valor)
 {
     if (ui->cmdCent->hasFocus()){
-    float f = valor * 9.0/5 + 32;
-    ui->cmdFahr->setValue(f);
+        float f = valor * 9.0/5 + 32;
+        ui->cmdFahr->setValue(f);
     }
 }
 
 void Termometro::cent2kel(int valor)
 {
-     if (ui->cmdCent->hasFocus()){
-     float k = valor + 273.15;
-     ui->cmdKel->setValue(k);
-     }
+    if (ui->cmdCent->hasFocus()){
+        float k = valor + 273.15;
+        ui->cmdKel->setValue(k);
+    }
 }
 
 void Termometro::fahr2cent(int valor)
 {
     if (ui->cmdFahr->hasFocus()){
-    float c = (valor - 32) * 5.0/9;
-    ui->cmdCent->setValue(c);
+        float c = (valor - 32) * 5.0/9;
+        ui->cmdCent->setValue(c);
     }
 }
 
 void Termometro::fahr2kel(int valor)
 {
     if (ui->cmdFahr->hasFocus()){
-    float k = (valor - 32) * 5.0/9 + 273;
-    ui->cmdKel->setValue(k);
+        float k = (valor - 32) * 5.0/9 + 273.15;
+        ui->cmdKel->setValue(k);
     }
 }
 
 void Termometro::kel2cent(int valor)
 {
     if (ui->cmdKel->hasFocus()){
-    float c = valor - 273.15;
-    ui->cmdCent->setValue(c);
+        float c = valor - 273.15;
+        ui->cmdCent->setValue(c);
     }
 }
 
 void Termometro::kel2fahr(int valor)
 {
     if (ui->cmdKel->hasFocus()){
-    float f = (valor - 273.15) * 9/5.0 + 32;
-    ui->cmdFahr->setValue(f);
+        float f = (valor - 273.15) * 9/5.0 + 32;
+        ui->cmdFahr->setValue(f);
     }
 }
 
