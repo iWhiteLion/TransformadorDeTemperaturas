@@ -2,7 +2,7 @@
 #define TERMOMETRO_H
 
 #include <QMainWindow>
-
+//Termometro.h
 QT_BEGIN_NAMESPACE
 namespace Ui { class Termometro; }
 QT_END_NAMESPACE
