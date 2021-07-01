@@ -26,7 +26,7 @@ Termometro::Termometro(QWidget *parent)
     connect(ui->cmdKel, SIGNAL(valueChanged(int)),
             this, SLOT(kel2fahr(int)));
 }
-
+//Destructor de termometro
 Termometro::~Termometro()
 {
     delete ui;
